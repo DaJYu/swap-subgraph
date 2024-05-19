@@ -1,0 +1,1097 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_marketorContractAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_marketCreator",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
+			}
+		],
+		"name": "e_addGater",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateaddress",
+				"type": "address"
+			}
+		],
+		"name": "e_addGaterDetail",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "marketoraddress",
+				"type": "address"
+			}
+		],
+		"name": "e_delGatebyMarketor",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			}
+		],
+		"name": "e_lockGatebyGater",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "marketoraddress",
+				"type": "address"
+			}
+		],
+		"name": "e_lockGatebyMarketor",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			}
+		],
+		"name": "e_unlockGatebyGater",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "marketoraddress",
+				"type": "address"
+			}
+		],
+		"name": "e_unlockGatebyMarketor",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
+			}
+		],
+		"name": "e_updateGatebyGator",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "marketoraddress",
+				"type": "address"
+			}
+		],
+		"name": "e_updateGatebyMarketor",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "e_updateGater",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "e_updateGaterDetail",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint128",
+						"name": "gateNo",
+						"type": "uint128"
+					},
+					{
+						"internalType": "address",
+						"name": "gateAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createtimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "marketunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gateunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUsed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct LGate.Info",
+				"name": "_gator",
+				"type": "tuple"
+			}
+		],
+		"name": "addGater",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "full_name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "country",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalWebsite",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalIp",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "twriterUrl",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "bbsUrl",
+						"type": "bytes32"
+					}
+				],
+				"internalType": "struct LGate.DetailInfo",
+				"name": "_gatorDatailinfo",
+				"type": "tuple"
+			}
+		],
+		"name": "addGaterDetailInfo",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint128",
+						"name": "gateNo",
+						"type": "uint128"
+					},
+					{
+						"internalType": "address",
+						"name": "gateAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createtimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "marketunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gateunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUsed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct LGate.Info",
+				"name": "_gator",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "full_name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "country",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalWebsite",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalIp",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "twriterUrl",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "bbsUrl",
+						"type": "bytes32"
+					}
+				],
+				"internalType": "struct LGate.DetailInfo",
+				"name": "_gatorDatailinfo",
+				"type": "tuple"
+			}
+		],
+		"name": "addfullGater",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_gator",
+				"type": "address"
+			}
+		],
+		"name": "delGatebyMarketor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "gateDetailList",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "full_name",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "country",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "OfficalWebsite",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "OfficalIp",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "twriterUrl",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "bbsUrl",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "gateList",
+		"outputs": [
+			{
+				"internalType": "uint128",
+				"name": "gateNo",
+				"type": "uint128"
+			},
+			{
+				"internalType": "address",
+				"name": "gateAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "name",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "createtimestamp",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "marketunlock",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "gateunlock",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "isUsed",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint128",
+				"name": "",
+				"type": "uint128"
+			}
+		],
+		"name": "gateNumbers",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "_gateNumber",
+				"type": "uint8"
+			}
+		],
+		"name": "getGaterDetailInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "full_name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "country",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalWebsite",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalIp",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "twriterUrl",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "bbsUrl",
+						"type": "bytes32"
+					}
+				],
+				"internalType": "struct LGate.DetailInfo",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_gateaddress",
+				"type": "address"
+			}
+		],
+		"name": "getGaterDetailInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "full_name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "country",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalWebsite",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalIp",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "twriterUrl",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "bbsUrl",
+						"type": "bytes32"
+					}
+				],
+				"internalType": "struct LGate.DetailInfo",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_gateaddress",
+				"type": "address"
+			}
+		],
+		"name": "getGaterInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint128",
+						"name": "gateNo",
+						"type": "uint128"
+					},
+					{
+						"internalType": "address",
+						"name": "gateAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createtimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "marketunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gateunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUsed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct LGate.Info",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "_gateNumber",
+				"type": "uint8"
+			}
+		],
+		"name": "getGaterInfo",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint128",
+						"name": "gateNo",
+						"type": "uint128"
+					},
+					{
+						"internalType": "address",
+						"name": "gateAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createtimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "marketunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gateunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUsed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct LGate.Info",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getGaterNo",
+		"outputs": [
+			{
+				"internalType": "uint128",
+				"name": "",
+				"type": "uint128"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_gateAddress",
+				"type": "address"
+			}
+		],
+		"name": "getGaterNoFromAddress",
+		"outputs": [
+			{
+				"internalType": "uint128",
+				"name": "",
+				"type": "uint128"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMaxGateNumber",
+		"outputs": [
+			{
+				"internalType": "uint128",
+				"name": "",
+				"type": "uint128"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "isValidGator",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "caller",
+				"type": "address"
+			}
+		],
+		"name": "isValidGator",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "vgaddress",
+				"type": "address"
+			}
+		],
+		"name": "isValidGatorFromAddress",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "vgaddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "webaddress",
+				"type": "bytes32"
+			}
+		],
+		"name": "isValidGatorWebFromAddress",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "lockGatebyGater",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_gatoraddress",
+				"type": "address"
+			}
+		],
+		"name": "lockGatebyMarketor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "marketCreator",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "marketorContractAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "maxGateNumbers",
+		"outputs": [
+			{
+				"internalType": "uint128",
+				"name": "",
+				"type": "uint128"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_marketorContractAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_marketCreator",
+				"type": "address"
+			}
+		],
+		"name": "setGaterEnv",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "unlockGatebyGater",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_gatoraddress",
+				"type": "address"
+			}
+		],
+		"name": "unlockGatebyMarketor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_name",
+				"type": "bytes32"
+			}
+		],
+		"name": "updateGatebyGator",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint128",
+						"name": "gateNo",
+						"type": "uint128"
+					},
+					{
+						"internalType": "address",
+						"name": "gateAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createtimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "marketunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gateunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUsed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct LGate.Info",
+				"name": "_gator",
+				"type": "tuple"
+			}
+		],
+		"name": "updateGatebyMarketor",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint128",
+						"name": "gateNo",
+						"type": "uint128"
+					},
+					{
+						"internalType": "address",
+						"name": "gateAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "createtimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "marketunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "gateunlock",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isUsed",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct LGate.Info",
+				"name": "_gator",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "bytes32",
+						"name": "full_name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "country",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalWebsite",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "OfficalIp",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "twriterUrl",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "bbsUrl",
+						"type": "bytes32"
+					}
+				],
+				"internalType": "struct LGate.DetailInfo",
+				"name": "_gatorDatailinfo",
+				"type": "tuple"
+			}
+		],
+		"name": "updatefullGater",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

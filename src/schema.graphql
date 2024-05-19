@@ -1,17 +1,35 @@
-type Greeting @entity {
+type CoinList @entity {
   id: ID!
-  sender: Sender!
-  greeting: String!
-  premium: Boolean
-  value: BigInt
-  createdAt: BigInt!
-  transactionHash: String!
+  coinFullName: String!
+  symbol: String!
+  typecode: String!
+  decimals: BigInt!
+  maxSupply: BigInt!
+  totalSupply: BigInt!
+  marketunlock: Boolean!
+  gateunlock: Boolean!
+  isUsed: Boolean!
+  creator: String!
+  contractAddress: String!
+  WhitePaperUrl: String!
+  OfficalWebsite: String!
+  blockExplorerUrl: String!
+  twriterUrl: String!
+  bbsUrl: String!
 }
 
-type Sender @entity {
+type gateList @entity {
   id: ID!
-  address: Bytes!
-  greetings: [Greeting!] @derivedFrom(field: "sender")
-  createdAt: BigInt!
-  greetingCount: BigInt!
+  gateAddress: String!
+  name: String!
+  createtimestamp: BigInt!
+  full_name: String!
+  country: String!
+  OfficalWebsite: String!
+  OfficalIp: String!
+  marketunlock: Boolean!
+  gateunlock: Boolean!
+  isUsed: Boolean!
+  twriterUrl: String!
+  bbsUrl: String!
 }

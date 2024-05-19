@@ -1,8 +1,8 @@
 import { BigInt, Address } from "@graphprotocol/graph-ts";
-import {
-  GreetingChange,
-} from "../generated/contract/contractAbi";
-import { Greeting, Sender } from "../generated/schema";
+// import {
+//   GreetingChange,
+// } from "../generated/contract/contractAbi";
+import { CoinList, gateList } from "../generated/schema";
 
 export function handleGreetingChange(event: GreetingChange): void {
   let senderString = event.params.greetingSetter.toHexString();

@@ -1,25 +1,29 @@
 specVersion: 0.0.4
-description: Greetings
+description: swap-subgraph is  a otc user Manage Queries.
 repository: https://github.com/DaJYu/swap-subgraph/
 schema:
   file: ./src/schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: contractAbi
+    name: TTSwapV1Gator
     network: mainnet
     source:
-      abi: contractAbi
-      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+      abi: CoinAbi
+      address: "0x0797AF617643c702C06D3f58bC4698ACdea72fB2"
+      abi: TTSwapV1Gator
+      address: "0x8232E0efC72Eac6fDd2023872d5c0c6e176f1cdB"
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-        - Greeting
-        - Sender
+        - CoinList
+        - gateList
       abis:
-        - name: contractAbi
-          file: ./abis/contractAbi.json
+        - name: CoinAbi
+          file: ./abis/CoinAbi.json
+        - name: TTSwapV1Gator
+          file: ./abis/TTSwapV1Gator.json
       eventHandlers:
         - event: GreetingChange(indexed address,string,bool,uint256)
           handler: handleGreetingChange
