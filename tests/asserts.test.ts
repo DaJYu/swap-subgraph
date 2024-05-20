@@ -10,7 +10,7 @@ import {
 
 describe("handle_e_addCoinbyGator()", () => {
     beforeAll(() => {
-        let coinList = new coinList();
+        let coinList = new CoinList();
         coinList.coinFullName = "#";
         coinList.symbol = "#";
         coinList.typecode = "#";
@@ -29,5 +29,5 @@ describe("handle_e_addCoinbyGator()", () => {
         gateList.bbsUrl = "#";
     });
 
-    test("Greeting and Sender entities", () => {});
+    test("show create a coinList", () => {});
 });
