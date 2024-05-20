@@ -8,6 +8,7 @@ import {
   Bytes,
   Address,
   BigInt,
+  String,
 } from "@graphprotocol/graph-ts";
 
 export class e_addGater extends ethereum.Event {
@@ -52,16 +53,16 @@ export class e_addGaterDetail__Params {
 
 }
 
-export class e_lockGatebyMarketor extends ethereum.Event {
-  get params(): e_lockGatebyMarketor__Params {
-    return new e_lockGatebyMarketor__Params(this);
+export class e_lockGatebyGater extends ethereum.Event {
+  get params(): e_lockGatebyGater__Params {
+    return new e_lockGatebyGater__Params(this);
   }
 }
 
-export class e_lockGatebyMarketor__Params {
-  _event: e_lockGatebyMarketor;
+export class e_lockGatebyGater__Params {
+  _event: e_lockGatebyGater;
 
-  constructor(event: e_lockGatebyMarketor) {
+  constructor(event: e_lockGatebyGater) {
     this._event = event;
   }
 
@@ -69,9 +70,6 @@ export class e_lockGatebyMarketor__Params {
     return this._event.parameters[0].value.toAddress();
   }
 
-  get marketoraddress(): Address {
-    return this._event.parameters[1].value.toAddress();
-  }
 }
 
 export class e_unlockGatebyGater extends ethereum.Event {
@@ -93,53 +91,4 @@ export class e_unlockGatebyGater__Params {
 
 }
 
-
-export class e_unlockGatebyMarketor extends ethereum.Event {
-  get params(): e_unlockGatebyMarketor__Params {
-    return new e_unlockGatebyMarketor__Params(this);
-  }
-}
-
-export class e_unlockGatebyMarketor__Params {
-  _event: e_unlockGatebyMarketor;
-
-  constructor(event: e_unlockGatebyMarketor) {
-    this._event = event;
-  }
-
-  get gateAddress(): Address {
-    return this._event.parameters[0].value.toAddress();
-  }
-
-  get marketoraddress(): Address {
-    return this._event.parameters[1].value.toAddress();
-  }
-}
-
-export class e_updateGatebyMarketor extends ethereum.Event {
-  get params(): e_updateGatebyMarketor__Params {
-    return new e_updateGatebyMarketor__Params(this);
-  }
-}
-
-export class e_updateGatebyMarketor__Params {
-  _event: e_updateGatebyMarketor;
-
-  constructor(event: e_updateGatebyMarketor) {
-    this._event = event;
-  }
-
-  get gateAddress(): Address {
-    return this._event.parameters[0].value.toAddress();
-  }
-
-  get name(): String {
-    return this._event.parameters[1].value.toString();
-  }
-  
-  get marketoraddress(): Address {
-    return this._event.parameters[2].value.toAddress();
-  }
-
-}
 
